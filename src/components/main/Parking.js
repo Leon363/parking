@@ -3,6 +3,9 @@ import Car from './models/Car'
 
 function Parking () {
 
+  
+
+
 return <div className='parkingCar' >
         <div className='Car'> <Car/> </div>
         <p> </p>
@@ -11,7 +14,9 @@ return <div className='parkingCar' >
         <div className='Car'> <Car/> </div>
         <p> </p>
         <div className='Car'> <Car/> </div>
-    
+        <p> </p>
+        <div className='Car'> <Car/> </div>
+        
       </div>
 
 }
