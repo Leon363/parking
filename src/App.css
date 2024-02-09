@@ -16,7 +16,7 @@
 #main-vrapper{
   display: grid;
   grid-template-columns: 15% 1fr;
-  display: grid;
+  /* display: grid; */
   
 }
 
@@ -28,7 +28,9 @@
   background-color: whitesmoke;
 }
 #footer{
-  background-color: lightgray;
+  background-color: whitesmoke;
+
+  text-align: right;
 }
 #button {
 
@@ -43,10 +45,5 @@ li {
  }
 
 
- #parkingCar {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  
- }
+ 
  

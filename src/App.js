@@ -16,11 +16,10 @@ function App() {
 
             <div id='sidebar'> <Sidebar/></div>
           <Routes>
-            
               <Route path='/' element={<Parking/>} />
+              
               <Route path='/all' element={<CarList/>} />
               
-          
           </Routes>
         </div>
       </BrowserRouter>
@@ -32,24 +31,3 @@ function App() {
 
 export default App;
 
-
-// function App() {
-//   return (
-//       <div className="App" >
-//         <div id='header'>header</div>
-//         <BrowserRouter>
-//           <Routes >
-//             <div id='main-vrapper'>
-//               <Route path='Sidebar' element={ <Sidebar/>} />
-//               <div id='main'><Parking/></div>
-//             </div>
-//           </Routes>
-//         </BrowserRouter>
-//       <div id='footer'>footer</div>
-//     </div>
-//   );
-// }
-
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<App />);

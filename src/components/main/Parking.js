@@ -1,66 +1,66 @@
-import React, { useState } from 'react'
+
 import Car from './models/Car'
+import Truck from './models/Truck';
+import style from './models/car.module.css'
 
 function Parking () {
 
-  
+  const cars = [
+      {number: 123, date: ' 01.01.2024', isPaid: true}, 
+      {number: 223, date: ' 10.01.2024', isPaid: false},
+      {number: 326, date: ' 20.01.2024', isPaid: true},
+      {number: 123, date: ' 01.01.2024', isPaid: true}, 
+      {number: 223, date: ' 10.01.2024', isPaid: false},
+      {number: 326, date: ' 20.01.2024', isPaid: true},
+      {number: 123, date: ' 01.01.2024', isPaid: true}, 
+      {number: 223, date: ' 10.01.2024', isPaid: false},
+      {number: 326, date: ' 20.01.2024', isPaid: true},
+      {number: 223, date: ' 10.01.2024', isPaid: false},
+      {number: 326, date: ' 20.01.2024', isPaid: true},
+      {number: 123, date: ' 01.01.2024', isPaid: true}, 
+      {number: 223, date: ' 10.01.2024', isPaid: false},
+      {number: 326, date: ' 20.01.2024', isPaid: true},
+      {number: 123, date: ' 01.01.2024', isPaid: true}, 
+      {number: 223, date: ' 10.01.2024', isPaid: false},
+      {number: 326, date: ' 20.01.2024', isPaid: true},
+      
+    ];
 
+    const trucks = [
+      {number: 321, date: ' 11.11.2024', isPaid: false}, 
+      {number: 232, date: ' 20.01.2024', isPaid: true},
+      {number: 623, date: ' 29.02.2024', isPaid: false},
+      
+    ]
 
-return <div className='parkingCar' >
-        <div className='Car'> <Car/> </div>
-        <p> </p>
-        <div className='Car'> <Car/> </div>
-        <p> </p>
-        <div className='Car'> <Car/> </div>
-        <p> </p>
-        <div className='Car'> <Car/> </div>
-        <p> </p>
-        <div className='Car'> <Car/> </div>
-        
-      </div>
+return (
+          <>
+            <div className={style.parkingCar}>
+              {cars.map((car ) => {
+                return (
+                  <div className={style.Car} key={car.number}> 
+                    <Car car={car}/> 
+                  </div>
+                  )
+              })}
+            
+            </div>
+          
+            {/* <div className={style.truck}>
+              {trucks.map((truck ) => {
+                  return (
+                  <div className='truck' key={truck.number}> 
+                    <Truck truck={truck}/> 
+                  </div>
+                    )
+                })}
+            </div> */}
+
+          </>
+        )
 
 }
 
 export default Parking
 
 
-
-  // const [car1, setCar1] = useState(false);
-  // const [car2, setCar2] = useState(false);
-  // const [car3, setCar3] = useState(false);
-  // const [car4, setCar4] = useState(false);
-  // const [car5, setCar5] = useState(false);
-
-
-  // function handleChange1() {
-  //   setCar1(!car1);
-  // }
-  // function handleChange2() {
-  //   setCar2(!car2);
-  // }
-  // function handleChange3() {
-  //   setCar3(!car3);
-  // }
-  // function handleChange4() {
-  //   setCar4(!car4);
-  // }
-  // function handleChange5() {
-  //   setCar5(!car5);
-  // }
-
-  // return (
-  //   <div id='main'>
-
-  //   <input type='checkbox' checked={car1} onChange={handleChange1} />
-  //   <p>Status of the place: { car1 ? <p> Occupied </p> : <p> Unoccupied </p> }</p>
-  //   <input type='checkbox' checked={car2} onChange={handleChange2} />
-  //   <p>Status of the place: { car2 ? <p> Occupied </p> : <p> Unoccupied </p> }</p>
-  //   <input type='checkbox' checked={car3} onChange={handleChange3} />
-  //   <p>Status of the place: { car3 ? <p> Occupied </p> : <p> Unoccupied </p> }</p>
-  //   <input type='checkbox' checked={car4} onChange={handleChange4} />
-  //   <p>Status of the place: { car4 ? <p> Occupied </p> : <p> Unoccupied </p>}</p>
-  //   <input type='checkbox' checked={car5} onChange={handleChange5} />
-  //   <p>Status of the place: { car5 ?<p> Occupied </p> : <p> Unoccupied </p> }</p>
-    
-  //   </div>
-  // )

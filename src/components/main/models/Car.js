@@ -1,11 +1,13 @@
 import style from './/car.module.css'
 import React from 'react'
     
-function Car () {
-    const Car = {id: Number, 
-                 time: Date, 
-                 isPayment: Boolean
-                }
+function Car ({car}) {
+    // const {car} = props;
+
+    // const Car = {id: Number, 
+    //              time: Date, 
+    //              isPayment: Boolean
+    //             }
     
     function carNumber(min,max) {
       min = Math.ceil(100000);
@@ -27,26 +29,27 @@ function Car () {
     //     return Car(carNumber(), generateRandomDate(), generateRundomBoolean())
     // }
 
-    const Cars = [123, 321, 666];
+    
 
-    const res =Cars.map(function(item) {
-      return <p>
-        
-        <span>{item.Number}</span>
-        <span>{item.Date}</span>
-        <span>{item.Boolean}</span>
-      </p>
-    })
+    // const res = cars.map(function(item) {
+    //   return (
+    //      <div>
+    //     <div>{item.number}</div>
+    //     <div>{item.date}</div>
+    //     <div>{item.isPaid.toString()}</div>
+    //     </div> 
+    //   )
+    // })
 
   return (
-    
-    <div className={style.Car} >
-        {res}
+    <div className={style.Car}>
+      <div className= {style.cotainerCar} >
+          <div> {car.number} </div>
+          <div> {car.date} </div>
+          <div> {car.isPaid.toString()} </div>
+      </div>
     </div>
-        // <section className="float-end w-50 mx-1 row border">
-        //     <h2 className={style.Car}>Dream Team</h2>
-        //     {/* {Cars.map((item, index) => <Car key={index} number={index + 1}/>)} */}
-        // </section>
+        
 
   )
 }
