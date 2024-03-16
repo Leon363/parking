@@ -23,6 +23,7 @@ function Sidebar()  {
          
          <li> <Link to='/all'> Car list </Link> </li>
          <li> <Link to='/unPayment'>Not payed</Link> </li>
+         <li> <Link to='/exempl'>Exempl</Link> </li>
         
       </ul>
     </div>
