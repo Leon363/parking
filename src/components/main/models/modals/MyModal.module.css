@@ -6,6 +6,12 @@
     left: 0;
     display: none;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 1rem; */
+    /* color: green; */
 
 }
 
@@ -20,4 +26,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.form {
+    padding: 1rem;
+    background-color: azure;
+}
+
+.buttonLeft {
+    background-color: blue;
+    
+    border: 1px solid black
+
+}
+.buttonRight {
+    background-color: whitesmoke;
+    border: 1px solid black
+
 }

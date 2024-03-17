@@ -2,24 +2,31 @@
    	height: 200px;
     width: 100px;
     border-width: 5px;    
-	border-style: double; 
-	border-color: blue;
-  background: url('./bgImage/car2.jpg') no-repeat center;
-  background-size: cover;
+    border-style: none; 
+    /* border-color: blue; */
+    background: url('./bgImage/car2.jpg') no-repeat center;
+    background-size: cover;
     /* background-color: red; */
-  display: grid; 
-  align-items: center;
-    /* grid-gap: 10px; */
+    display: grid; 
+    /* align-items: center; */
+    grid-gap: 10px;
     /* grid-row-start: 10px; */
     border-radius: 25%;
     /* gap: 50px; */
+    
 }
 /* .grid-container {
     gap: 50px;
 } */
-.cotainerCar > div {
-   
+
+/* .Car > div {
+  color: rgb(12, 20, 30);
+} */
+
+.cotainerCar {
+    text-align: start;
     border-radius: 15px;
+    text-decoration-color: aqua;
   }
 
   .parkingCar {

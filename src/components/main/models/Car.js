@@ -54,15 +54,15 @@ function Car ({car}) {
 
   return (
     <div className={style.Car}>
-      <div className= {style.cotainerCar} >
-          <div> {car.number} </div>
+      <div className= {style.containerCar} >
+          <div className= {style.containerCar} > {car.number} </div>
           {/* <button className='open-btn'><div> {car.number} </div></button> */}
           {/* <modal active={modalActive} setActive={setModalActive}/> */}
           
-          <div> {car.date} </div>
-          <div> {car.isPaid.toString()} </div>
+          <div className= {style.containerCar} > {car.date} </div>
+          <div className= {style.containerCar} > {car.isPaid.toString()} </div>
           <div>
-            <button onClick={() => car.remove(car.Car)}>Delate</button>
+            <button onClick={() => car.remove(car.Car)}>Delete</button>
           </div>
           
       </div>
