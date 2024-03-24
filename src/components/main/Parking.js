@@ -43,18 +43,24 @@ function Parking () {
 
   const [modal, setModal] = useState(false);
 
+  const [activeCar, setActiveCar] = useState();
+
+  
+
   const [cars, setCars] = useState([
-      {number: 123, date: ' 01.01.2024', isPaid: true}, 
-      {number: 223, date: ' 10.01.2024', isPaid: false},
-      {number: 326, date: ' 20.01.2024', isPaid: true},
-      {number: 111, date: ' 01.01.2024', isPaid: true}, 
-      {number: 222, date: ' 10.01.2024', isPaid: false},
-      {number: 333, date: ' 20.01.2024', isPaid: true},
-      {number: 321, date: ' 01.01.2024', isPaid: true}, 
-      {number: 322, date: ' 10.01.2024', isPaid: false},
-      {number: 623, date: ' 20.01.2024', isPaid: true},
-      {number: 456, date: ' 10.01.2024', isPaid: false},
-      // {number: 326, date: ' 20.01.2024', isPaid: true},
+      {parkingPlace: 1, number: 123, date: ' 01.01.2024', isPaid: true}, 
+      {parkingPlace: 2, number: 223, date: ' 10.01.2024', isPaid: false},
+      {parkingPlace: 3, number: 326, date: ' 20.01.2024', isPaid: true},
+      {parkingPlace: 4, number: 111, date: ' 01.01.2024', isPaid: true}, 
+      {parkingPlace: 5, number: 222, date: ' 10.01.2024', isPaid: false},
+      {parkingPlace: 6, number: 333, date: ' 20.01.2024', isPaid: true},
+      {parkingPlace: 7, number: 363, date: ' 01.01.2024', isPaid: true}, 
+      {parkingPlace: 8, number: 322, date: ' 10.01.2024', isPaid: false},
+      {parkingPlace: 9, number: 623, date: ' 20.01.2024', isPaid: true},
+      {parkingPlace: 10, number: 456, date: ' 10.01.2024', isPaid: false},
+      {parkingPlace: 11, number: null, date: ' ', isPaid: false},
+
+      
       // {number: 123, date: ' 01.01.2024', isPaid: true}, 
       // {number: 223, date: ' 10.01.2024', isPaid: false},
       // {number: 326, date: ' 20.01.2024', isPaid: true},
@@ -64,15 +70,30 @@ function Parking () {
       
     ]);
 
+    function changeCars(cars, setCars){
+      return [...cars, setCars]
+    }
+
+
     const createCar = (newCar) => {
       setCars([...cars, newCar])
     }
 
-    // const removeCar = (car) => {
-    //   setCars(cars.filter(c => c.number !== car.number))
+    // function removeCar (newValue1) {
+    //   console.log('newWalue1' , newValue1);
+    //   let removeCarInd = cars.findIndex(c => c.parkingPlace ===  newValue1.parkingPlace);
+    //   console.log('ind1', removeCarInd);
+    //   const reNewCars = cars;
+    //   reNewCars[removeCarInd] = newValue1;
+    //   console.log(reNewCars);
+    //   setCars(reNewCars);
     // }
 
-    // const 
+    const removeCar = (car) => {
+      // alert('Whant to delete? Push the \'submit\' button')
+      alert('Car was deleted.')
+      setCars(cars.filter(c => c.number !== car.number))
+    }
 
     const trucks = [
       {number: 321, date: ' 11.11.2024', isPaid: false}, 
@@ -80,6 +101,24 @@ function Parking () {
       {number: 623, date: ' 29.02.2024', isPaid: false},
       
     ]
+
+
+    function onSubmit (newValue) {
+      console.log('newWalue' , newValue);
+      let changeCarInd = cars.findIndex(c => c.parkingPlace ===  newValue.parkingPlace);
+      console.log('index', changeCarInd);
+      const newCars = cars;
+      // newCars.splice(changeCarInd, 1, newValue)
+      newCars[changeCarInd] = newValue;
+      console.log(newCars);
+      setCars(newCars);
+      
+      // console.log(cars.findIndex(c => c.number ===  c.number));
+      // return car
+      // cars = [...cars, setCars]
+      setModal(false);
+     
+    }
 
 return (
           <>
@@ -91,14 +130,18 @@ return (
               </MyModal> */}
               {/* {modal && MyModal} */}
               {modal && <div className={styles.myModal}>
-                <Form />  
+                <Form car={activeCar} onSubmit={onSubmit} onCancel={() => setModal(false)}/>  
               </div>}
               {cars.map((car ) => {
                 return (
-                  <div className={style.Car} key={car.number} onClick={() => setModal(true)}> 
-                    <Car car={car} removeCar={((car) => {
-                        setCars(cars.filter(c => c.number !== car.number))
-                      })}/> 
+                  <div className={style.Car} key={car.number} onClick={() => {setModal(true); setActiveCar(car)}}> 
+                    <Car car={car} remove={removeCar}
+                      //       ={((car) => {
+                      //   setCars(cars.filter(c => c.number !== car.number))
+                      // })}
+
+                      /> 
+                      {/* <ParkingPlace/> */}
                   </div>
                   )
               })}

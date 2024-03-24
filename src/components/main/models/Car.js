@@ -1,10 +1,32 @@
 import style from './/car.module.css'
 import React from 'react'
     
-function Car ({car}) {
+function Car ({car,setCars, remove}) {
+
+  // const [currentCar, setCurrentCar] = useState(car);
+
+  // function remove(e) {
+  //   console.log(car);
+  //     // e.preventDefault();
+  //     // removeCar(currentCar);
+      
+  // }
+
+  // function numberHandleChange (e) {
+
+  //   // const carCopy = 
+  //   // carCopy.number = e.target.value;
+  //   setCurrentCar({
+  //       ...removeCar, 
+        
+  //   });
+  // }
+
     // const {car} = props;
 
-    const Car = {id: Number, 
+    const Car = {
+                 parkingPlace: Number,
+                 id: Number, 
                  time: Date, 
                  isPayment: Boolean
                 }
@@ -32,8 +54,16 @@ function Car ({car}) {
         
     }
 
+    // const removeCar = (car) => {
+    //   if(car.number === car.number) {
+    //       return car.reduce(car.number)
+    //   }
+    //   setCars(car.filter(c => c.number !== car.number))
+
+    // }
+
     let resultParkingCar = [];
-    console.log(resultParkingCar.push(rundomCar()));
+    // console.log(resultParkingCar.push(rundomCar()));
 
 
 
@@ -55,14 +85,15 @@ function Car ({car}) {
   return (
     <div className={style.Car}>
       <div className= {style.containerCar} >
+          <div className= {style.containerCar} > {car.parkingPlace} </div>
           <div className= {style.containerCar} > {car.number} </div>
           {/* <button className='open-btn'><div> {car.number} </div></button> */}
           {/* <modal active={modalActive} setActive={setModalActive}/> */}
           
           <div className= {style.containerCar} > {car.date} </div>
-          <div className= {style.containerCar} > {car.isPaid.toString()} </div>
+          <div className= {style.isPayedConteiner} > {car.isPaid.toString()} </div>
           <div>
-            <button onClick={() => car.remove(car.Car)}>Delete</button>
+            <button onClick={() => remove(car)}>Delete</button>
           </div>
           
       </div>
