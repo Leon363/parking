@@ -62,7 +62,7 @@ function Car ({car,setCars, remove}) {
 
     // }
 
-    let resultParkingCar = [];
+    // let resultParkingCar = [];
     // console.log(resultParkingCar.push(rundomCar()));
 
 

@@ -92,7 +92,11 @@ function Parking () {
     const removeCar = (car) => {
       // alert('Whant to delete? Push the \'submit\' button')
       alert('Car was deleted.')
+     
       setCars(cars.filter(c => c.number !== car.number))
+
+
+    
     }
 
     const trucks = [

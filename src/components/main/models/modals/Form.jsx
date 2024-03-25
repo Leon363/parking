@@ -54,13 +54,13 @@ const Form = ({car, onSubmit, onCancel}) => {
         <form className={styles.form}> 
             <div>
                 <div><input type='text'  value={currentCar.parkingPlace} onInput={parkingPlaceHandleChange}  placeholder={'parking place'} /></div>
-                <p></p>
+               
                 <div><input type='text' name='number' value={currentCar.number} onInput={numberHandleChange} placeholder={ 'car number'} /></div>
-                <p></p>
+                
                 <div><input type='text' name='date' value={currentCar.date} onInput={dateHandleChange} placeholder='parking time' /></div>
-                <p></p>
+                
                 <div>is Payed?<input type='checkbox' value={currentCar.isPayed} placeholder='is Payed' /> </div>
-                <p></p>
+                
             </div>
             <div>
                 <button className={styles.buttonLeft} onClick={onSave}> Submit </button>
